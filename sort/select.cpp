@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include<iostream>
 using namespace std;
+time O（n²）
 
 
 void swap(int p[],int i,int j)

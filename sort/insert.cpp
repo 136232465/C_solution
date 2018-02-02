@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <iostream>
 using namespace std;
-
+time O(n2)
 
 
 void insertsort(int A[], int n)

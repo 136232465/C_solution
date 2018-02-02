@@ -22,7 +22,7 @@ void DFS(int map[5][5], int m)
 
 }
 
-//胜读优先遍历（非递归，用栈）
+//深度优先遍历（非递归，用栈）
 
 void DFSstack(int map[5][5], int m)
 {

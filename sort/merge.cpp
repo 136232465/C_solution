@@ -1,6 +1,8 @@
 #include<stdio.h>
 #include <iostream>
 using namespace std;
+time O（nlogn）
+space O（n）
 
 void merge(int A[],int left,int mid,int right)
 {
@@ -13,7 +15,7 @@ void merge(int A[],int left,int mid,int right)
 	{
 		temp[index++] = A[i] <= A[j] ? A[i++] : A[j++];
 	}
-	while (i<=mid)
+	while (i <= mid)
 	{
 		temp[index++] = A[i++];
 	}
@@ -26,7 +28,6 @@ void merge(int A[],int left,int mid,int right)
 		A[left++] = temp[k];
 	}
 }
-
 void mergesort(int A[], int left,int right)
 {
 	if (left==right)

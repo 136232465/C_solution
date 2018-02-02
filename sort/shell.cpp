@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <iostream>
 using namespace std;
-
+O（nlogn）~O（n²）
 void shellsort(int p[],int n)
 {
 	int step = n / 2;
