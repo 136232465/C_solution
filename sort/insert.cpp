@@ -1,8 +1,9 @@
 #include <stdio.h>
 #include <iostream>
-using namespace std;
-time O(n2)
+//using namespace std;
+//time O(n2)
 
+using namespace std;
 
 void insertsort(int A[], int n)
 
@@ -11,7 +12,7 @@ void insertsort(int A[], int n)
 	{
 		int j = i;
 		int get = A[i];
-		while (j > 0&&get < A[j - 1])
+		while (j > 0 && get < A[j - 1])
 		{
 			A[j] = A[j - 1];
 			j--;
@@ -31,8 +32,6 @@ int main()
 	{
 		cout << A[i] << endl;
 	}
-
 	system("pause");
 	return 0;
-
 }

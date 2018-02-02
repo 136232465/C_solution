@@ -8,14 +8,11 @@ using namespace std;
 void DFS(int map[5][5], int m)
 {
 	cout << m << endl;
-	for (int i = 0; i < 5; i++)
-	{
+	for (int i = 0; i < 5; i++){
 		map[i][m] = -1;
 	}
-	for (int i = 0; i < 5; i++)
-	{
-		if (map[m][i] == 1)
-		{
+	for (int i = 0; i < 5; i++){
+		if (map[m][i] == 1){
 			DFS(map, i);
 		}
 	}
@@ -30,53 +27,46 @@ void DFSstack(int map[5][5], int m)
 	int i = 0;
 	stack<int>s;
 	s.push(m);
-	while (!s.empty())
-	{
+	while (!s.empty()){
 		int k = s.top();
 		if (visit[k] == 0){
 			cout << k << endl;
 			visit[k] = 1;
 		}
-		
-		for (i = 0; i < 5;i++)
-		{
-			if (map[k][i] == 1 && visit[i] == 0)
-			{
+
+		for (i = 0; i < 5; i++){
+			if (map[k][i] == 1 && visit[i] == 0){
 				s.push(i);
 				break;
 			}
 		}
-		if (i==5)
-		{
+		if (i == 5){
 			s.pop();
 		}
 
 	}
-	
+
 
 }
 
 
 //广度优先遍历(用队列)
 
-void BFS(int map[5][5],int m)
+void BFS(int map[5][5], int m)
 {
 	queue<int>a;
 	a.push(m);
-	while (!a.empty())
-	{
+	while (!a.empty()){
 		int k = a.front();
 		a.pop();
-		for (int i = 0; i < 5;i++)
-		{
-			if (map[k][i]==1)
-			{
+		for (int i = 0; i < 5; i++){
+			if (map[k][i] == 1){
 				a.push(i);
 				map[i][k] = -1;
 			}
 		}
 		cout << k << endl;
-	}	 
+	}
 }
 
 
