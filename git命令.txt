@@ -1,0 +1,6 @@
+git status
+git add .
+git commmit 
+git push
+账号 136232465@qq.com
+密码 gw950426
