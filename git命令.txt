@@ -4,3 +4,5 @@ git commmit
 git push origin master
 账号 136232465@qq.com
 密码 gw950426
+通过ssh方式push不需要输入账号密码
+通过http方式push需要账号密码
