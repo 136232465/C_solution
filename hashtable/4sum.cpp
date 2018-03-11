@@ -1,7 +1,8 @@
 // leetcode 454  4sum II
 //time O(n2)
 //space O£¨n£©
-
+// Given four lists A, B, C, D of integer values,
+// compute how many tuples (i, j, k, l) there are such that A[i] + B[j] + C[k] + D[l] is zero.
 #include <unordered_map>
 #include <vector>
 using namespace std;
