@@ -1,3 +1,5 @@
+//random 5 to random 7
+
 class Solution{  
 public:  
     int rand7(){  
