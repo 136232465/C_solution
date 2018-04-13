@@ -1,10 +1,6 @@
-
-#include <stdio.h>
-#include <vector>
-#include <algorithm>
-#include <iostream>
-#include <map>
-using namespace std;
+// find longest sum is 0;
+//[1,2,-2,0,4,1]
+//return 3(2,0)
 
 class Solution{
 public:
@@ -28,12 +24,3 @@ public:
 		return res;
 	}
 };
-
-
-int main() {
-	vector<int> temp = { 0};
-	Solution s;
-	 int res = s.getlong_num(temp);
-	 cout << res << endl;
-	 system("pause");
-}
