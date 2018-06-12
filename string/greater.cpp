@@ -1,39 +1,76 @@
-
 #include <stdio.h>
 #include <vector>
 #include <algorithm>
 #include <iostream>
+#include <unordered_set>
 #include <map>
 using namespace std;
 
-class Solution{
+//class Solution{
+//public:
+//	void getlong_num(vector<int>& vin){
+//		int cur = 0, odd = 0, even = 0, tempodd;
+//		for (int i = 0; i < vin.size(); ++i){
+//			if (vin[i] & 0x01 == 1){
+//				even++;
+//			}
+//		}
+//		if (even == vin.size() || even == 0){
+//			return;
+//		}
+//		tempodd = even;
+//		for (; cur < tempodd; ++cur){
+//			if ((vin[cur] & 0x01) == 0){
+//				swap(vin[cur], vin[even]);
+//				even++;
+//			}	else {
+//				if (odd != cur){
+//					swap(vin[cur], vin[odd]);
+//				}
+//				odd++;
+//			}		
+//		}
+//		while ((vin[cur - 1] & 0x01) == 0){
+//			swap(vin[cur-1], vin[even]);
+//			even++;
+//		}
+//		return;
+//	}
+//};
+
+class Solution {
 public:
-	int getlong_num(vector<int> dst){
-		if (dst.empty()){
-			return 0;
+	bool wordBreak(string s, unordered_set<string> &dict) {
+		if (s.empty() || dict.size() == 0){
+			return false;
 		}
-		map<int, int> dp;
-		dp[0] = 0;
-		int sum = 0;
-		int res = 0;
-		for (int i = 1; i <= dst.size(); ++i){
-			sum += dst[i-1];
-			auto it = dp.find(sum);
-			if (it == dp.end()){
-				dp[sum] = i;
-			} else {
-				res = max(res, i - it->second);
+		return wordBreak(s, dict, 0);
+	}
+private:
+	bool wordBreak(string s, unordered_set<string> &dict, int index){
+		if (index == s.size()){
+			return true;
+		}
+		for (int i = index; i < s.size(); ++i){
+			string word = s.substr(i, i - index + 1);
+			if (dict.count(word) != 0){
+				return wordBreak(s, dict, i + 1);
 			}
 		}
-		return res;
+		return false;
 	}
 };
 
 
+
 int main() {
-	vector<int> temp = { 0};
-	Solution s;
-	 int res = s.getlong_num(temp);
-	 cout << res << endl;
-	 system("pause");
+	string s = "cars";
+	unordered_set<string> unset;
+	unset.insert("car");
+	unset.insert("ca");
+	unset.insert("rs");
+	Solution sou;
+	bool res =  sou.wordBreak(s, unset);
+
+	system("pause");
 }
